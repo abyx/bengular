@@ -1,15 +1,15 @@
-import CourseHtml from './course.html';
+import CoursePropsHtml from './course-props.html';
 
-class CourseCtrl {
+class CoursePropsCtrl {
 	constructor() {
 
 	}
 }
 
 
-export const courseComponent = {
-	controller: CourseCtrl,
-	template: CourseHtml,
+export const coursePropsComponent = {
+	controller: CoursePropsCtrl,
+	template: CoursePropsHtml,
 	bindings: {
 		course: '<'
 	}

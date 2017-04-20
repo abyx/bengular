@@ -2,24 +2,29 @@ import angular from 'angular';
 
 import '../style/app.css';
 
-import { coursesComponent } from './courses';
+import {coursesComponent} from './courses-component';
+import {coursePropsComponent} from './course-props-component';
+import {courseDetailsComponent} from './course-details-component';
+import {CoursesStore} from './courses-store';
 
 let app = () => {
-  return {
-    template: require('./app.html'),
-    controller: 'AppCtrl',
-    controllerAs: 'app'
-  }
+	return {
+		template: require('./app.html'),
+		controller: 'AppCtrl',
+		controllerAs: 'app'
+	}
 };
 
 class AppCtrl {
-  constructor() {
-    this.url = 'https://github.com/preboot/angular-webpack';
-  }
+	constructor() {
+	}
 }
 
 export default angular.module('app', [])
-  .directive('app', app)
-  .controller('AppCtrl', AppCtrl)
-  .component('courses', coursesComponent)
-  .name;
+	.directive('app', app)
+	.controller('AppCtrl', AppCtrl)
+	.component('courses', coursesComponent)
+	.component('courseProps', coursePropsComponent)
+	.component('courseDetails', courseDetailsComponent)
+	.service('CoursesStore', CoursesStore)
+	.name;

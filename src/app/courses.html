@@ -1,1 +1,10 @@
-Hi I'm courses
+<div>
+	Courses list:
+	<div ng-repeat="course in $ctrl.courses">
+		<course-props course="course" ng-click="$ctrl.onCourseSelect(course.id)"></course-props>
+	</div>
+	<div ng-if="$ctrl.selectedCourseId">
+		<course-details course-id="$ctrl.selectedCourseId"></course-details>
+	</div>
+</div>
+

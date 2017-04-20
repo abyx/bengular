@@ -8,6 +8,10 @@ class CoursesCtrl {
 	$onInit() {
 		this.CoursesStore.listCourses().then(courses => this.courses = courses);
 	}
+
+	onCourseSelect(courseId) {
+		this.selectedCourseId = courseId;
+	}
 }
 
 export const coursesComponent = {
