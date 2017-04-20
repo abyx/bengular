@@ -2,6 +2,8 @@ import angular from 'angular';
 
 import '../style/app.css';
 
+import { coursesComponent } from './courses';
+
 let app = () => {
   return {
     template: require('./app.html'),
@@ -16,10 +18,8 @@ class AppCtrl {
   }
 }
 
-const MODULE_NAME = 'app';
-
-angular.module(MODULE_NAME, [])
+export default angular.module('app', [])
   .directive('app', app)
-  .controller('AppCtrl', AppCtrl);
-
-export default MODULE_NAME;
+  .controller('AppCtrl', AppCtrl)
+  .component('courses', coursesComponent)
+  .name;
